@@ -17,9 +17,11 @@ const getWeatherInfo = async () => {
         console.log(weatherInfo);
         const { weather, main, name } = weatherInfo;
         console.log(weather, main, name);
+
         container.innerHTML += `${main.temp} ${name} <br>  ${weather[0].description} <br> <img src="http://openweathermap.org/img/wn/${weather[0].icon}@2x.png" </img>`;
       } catch (error) {
         alert("There is not a city called" + cityInput);
+        console.log(error);
       } finally {
         cityInput.value = "";
       }
